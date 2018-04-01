@@ -1,0 +1,751 @@
+@charset "utf-8";
+/*  CSS Document  */
+/* html5resetでmargin,padding,border,list-style-typeリセット済み */
+html{
+	font-size:16px;}
+	
+@media screen and (max-width:959px){
+html{
+	font-size: 20px;}
+}
+
+p.no-js{
+	color: #fff;
+	background-color: #F00;
+	position: fixed;
+	z-index: 1000000;/*meanmenuより上*/
+}
+
+body {
+	background-color: #FFF9F1;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 1rem;
+	color: #241715;
+}
+p,dl{
+	line-height: 1.7;
+}
+h2{
+	display: block;
+	margin-bottom: 20px;/* 要素の下に余白 */
+	line-height: 1;
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 3.5rem;
+	padding-left: 50px;/* 見出し文前にマークをつける */
+	background:url(images/listimage.png) no-repeat 0;
+}
+
+@media screen and (max-width: 959px){
+h2{
+	margin-left: 20px;
+	font-size: 3rem;
+}
+}
+
+/*  リンク */
+a {
+	color: #241715;
+	text-decoration: none;
+}
+a:hover {
+	color: #CA9;
+	text-decoration: none;
+}
+/* PC用ヘッダー */
+
+@media screen and (min-width:960px) {
+/* PC用ヘッダーベース */
+header {
+	background-color:rgba(238,221,204,0.9);
+	height: 120px;
+	width: 100%;/* 横幅いっぱい広げる */
+	margin: 0;
+	padding: 0;
+	z-index: 2;
+	position: fixed;
+}
+/* PC用ヘッダー中身 */
+
+header .logo{
+	height: 80px;
+	text-align: center;/* imgを中央揃え、子要素にinline-block適用 */
+}
+header .inner img{
+	display: inline-block;
+	padding-top: 10px;
+}
+
+/* ナビゲーション部分 */
+header nav{
+	height: 40px;/* ナビの高さ */
+	background-color: #CBA;
+}
+header nav > ul{
+	width: 960px;
+	text-align: center;
+	margin: 0 auto;/* ナビを中央に */
+	overflow: hidden;
+}
+/* headerすべてのli.gnav内のナビに適用 */
+header li.gnav{
+	width: 160px;
+	float: left;
+}
+
+li.gnav a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 1.2rem;
+	color: #241715;
+	text-decoration: none;
+}
+
+/* header親メニューのみ適用 プルダウンメニューには適用しない */
+
+li.gnav > a{
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 20px;
+	transition: .5s;
+}
+
+li.gnav:hover > a {
+	color: #241715;
+	background: #A98;
+	text-decoration: none;
+}
+/*  プルダウンは一時的に隠す  */
+header li ul li{
+	height: 0;
+	overflow: hidden;
+	transition: .5s;
+}
+header li:hover ul li{
+	overflow: visible;
+	height: 40px;/* 高さ指定でプルダウンを演出 */
+}
+ul li.localnav{
+	background: #A98;
+}
+
+ul li.localnav:hover{
+	background: #765;
+}
+
+li.localnav a{
+	display: block;
+	height: 20px;
+	padding-top :10px;
+	padding-bottom: 10px;
+}
+
+ul li.localnav:hover a{
+	color: #EDC;
+}
+
+}
+@media screen and (max-width: 959px){
+header .logo{
+	display: none;
+}
+}
+/*  PC用.main,section  */
+@media screen and (min-width: 960px) {
+.main{
+	z-index: 1;
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.main .slide{
+	width: 960px;
+	padding-top :120px;
+	margin-right: auto;
+	margin-left: auto;
+	height :300px;
+}
+.main .logo{
+	display: none;
+}
+section{
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -100px;
+	padding-top: 120px;
+}
+}
+/*  モバイル用.main,section  */
+@media screen and (max-width: 959px) {
+.main{
+	z-index: 1;
+	width: 100%;
+	padding-top :52px;
+}
+.main .logo{
+	height: 80px;
+	text-align: center;/* imgを中央揃え、子要素にinline-block適用 */
+}
+.main .logo img{
+	display: inline-block;
+	padding-top: 10px;
+	width: 250px;
+}
+section{
+	margin-top : -32px;
+	padding-top : 52px;
+}
+section h2{
+	font-size: 2rem;}
+
+}
+/* home */
+.home{
+	min-height: 100vh;
+}
+
+/* news */
+/* PC用news */
+@media screen and (min-width: 960px) {
+section.news{
+	margin-top : -70px;
+	min-height: 300px;
+}
+
+.news dl {
+	overflow: hidden;
+	width: 960px;
+}
+.news dt {
+	float:left;
+	font-weight: bold;
+	padding-bottom:10px;
+}
+.news dd {
+	padding-left: 10px;
+	float:left;
+	width: 800px;
+	padding-bottom:10px;
+}
+}
+/* モバイル用news */
+@media screen and (max-width: 959px){
+section.news{
+	margin-top : -70px;
+	min-height: 300px;
+}
+
+.news dl {
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow: hidden;
+	max-width: 100%;
+}
+.news dt {
+	padding-bottom:10px;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.news dd {
+	padding-bottom: 20px;
+}
+}
+/* concept */
+.subtitle{
+	font-size: 1.2rem;
+	font-weight: bold;
+	}
+.c-inner{
+	padding-top: 20px;
+}
+.concept img{
+	max-width: 100%;
+	height: auto;
+}
+.concept .inner{
+	min-height: 100vh;
+}
+@media screen and (min-width:960px){
+.c-inner p{
+	padding-top:10px;
+}
+}
+@media screen and (max-width:959px){
+.c-inner{
+	padding-top: 20px;
+	padding-left:20px;
+	padding-right: 20px;
+}
+}
+
+/* menu */
+.m-inner img{
+	max-width: 100%;
+	height: auto;
+}
+@media screen and (max-width:959px){
+.m-inner img{
+	width:100vw;
+	height:16vh;
+	font-family: 'object-fit: cover, object-position: left center';/* object-fit非対応の場合 */
+	object-fit: cover;
+	object-position: left center;
+}
+}
+.menu-price{
+	font-weight: bold;
+}
+@media screen and (min-width:960px){
+/* ページ内遷移 */
+#drinkid,#sweetsid,#foodid{
+	margin-top: -120px;
+	padding-top:120px;
+}
+
+/* menu内部 */
+.menu-list{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between; 
+	overflow :hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.menu-list-inner{
+	box-sizing: border-box;
+	width: 48%;
+	height: 60px;
+	border-bottom: 1px dashed #543;
+	display: flex;
+	flex-flow: nowrap;
+	align-items: center;
+	justify-content: space-between; 
+	overflow :hidden;
+}
+.menu-list-inner:last-child{
+	border-bottom: none;
+}
+
+.menu-list .menu-list-inner:last-child,
+.menu-list .menu-list-inner:nth-last-child(2):nth-child(odd){
+	border-bottom: 0;
+}
+.menu-name{
+	display: block;
+	font-size: 1.1rem;
+}
+.menu-price{
+	font-size: 1.1rem;
+}
+.menu-note{
+	display: block;
+	padding-top: 5px;
+	font-size:0.9rem;
+}
+/* セットメニュー用 */
+.menu-list-1{
+	display: block;
+	overflow :hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.menu-list-inner-1{
+	box-sizing: border-box;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	flex-flow: nowrap;
+	align-items: center;
+	justify-content: space-between; 
+	overflow :hidden;
+}
+/* セット説明 */
+.cakeset{
+	padding: 30px;
+	background: #EDC;
+}
+p.cakeset-lead{
+	padding-bottom: 20px;
+	border-bottom: 1px dotted #543; 
+	text-align: center;
+}
+.cakeset-list{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between; 
+	overflow :hidden;
+}
+.cakeset-list-inner{
+	box-sizing: border-box;
+	width: 33%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	overflow :hidden;
+	text-align: center;
+}
+.cakeset-name{
+	display: block;
+	margin: 0 auto;
+	font-size: 1.1rem;
+}
+.cakeset-note{
+	display: block;
+	padding-top:5px;
+	font-size:0.9rem;
+}
+.cakeset-drink-note{
+	padding-top: 20px;
+	border-top: 1px dotted #543; 
+	text-align: center;
+}
+}
+
+@media screen and (max-width:959px){
+/* ページ内遷移 */
+#drinkid,#sweetsid,#foodid{
+	margin-top: -52px;
+	padding-top:52px;
+}
+
+/* menu内部 */
+.menu-list,.menu-list-1{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between; 
+	overflow :hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.menu-list-inner,.menu-list-inner-1{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 100px;
+	display: flex;
+	flex-flow: nowrap;
+	align-items: center;
+	justify-content: space-between; 
+	overflow :hidden;
+}
+
+.menu-list-inner{
+	border-bottom: 1px dashed #543;
+}
+
+.menu-list .menu-list-inner:last-child{
+	border-bottom: 0;
+}
+
+.menu-name{
+	display: block;
+}
+.menu-note{
+	display: block;
+	font-size:0.9rem;
+}
+/* セット説明 */
+.cakeset{
+	background: #EDC;
+	padding: 30px;
+
+}
+p.cakeset-lead{
+	padding-bottom: 30px;
+	text-align: center;
+	border-bottom: 1px dotted #543; 
+}
+.cakeset-list{
+	display: flex;
+	flex-flow: row wrap;
+	overflow :hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.cakeset-list-inner{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 100px;
+	display: flex;
+	flex-flow: nowrap;
+	text-align: center;
+	align-items: center;
+	overflow :hidden;
+}
+.cakeset-name{
+	display: block;
+	margin: 0 auto;
+}
+.cakeset-note{
+	display: block;
+	padding-top:5px;
+	font-size:0.9rem;
+}
+.cakeset-drink-note{
+	padding-top: 30px;
+	text-align: center;
+	border-top: 1px dotted #543; 
+}
+}
+
+/* access */
+.access .inner{
+	min-height: 100vh;
+}
+@media screen and (min-width:960px){
+.a-inner{
+	font-style: normal;
+	display: flex;
+	flex: space-between;
+}
+.access-list{
+	padding-bottom: 10px;
+}
+.access-info{
+	box-sizing: border-box;
+	width: 40%;
+	padding-left: 20px;
+}
+p.access-head{
+	font-weight: bold;
+}
+/* google map*/
+#map{
+	width: 60%;
+	height: 400px;
+	background-color: grey;
+}
+}
+@media screen and (max-width:959px){
+.access-info{
+	padding-top: 20px;
+}
+p.access-head{
+	background: #EDC;
+	padding: 5px 20px;
+	font-weight: bold;
+}
+p.access-content{
+	padding: 5px 20px;
+}
+
+/* google map*/
+#map{
+	width: 100%;
+	height: 400px;
+	background-color: grey;
+}
+}
+
+/* contact */
+section.contact{
+	margin-bottom: 30px;
+	}
+
+input[type=text], textarea, select {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+	appearance: none;
+}
+input[type=radio]{
+	transform: scale(1.5);
+	margin: 10px;
+}
+.radio-select{
+	margin-bottom: 10px;
+}
+.contact input[type=text]{
+	height: 30px;
+	border-bottom: 1px dotted #241715;
+}
+input[type=text],textarea{
+	border: 0;
+	background-color: #F9E6D0;
+	color: #241715;
+	font-size: 1.2rem;
+}
+::placeholder,
+::-webkit-input-placeholder,
+:-ms-input-placeholder,
+::-moz-placeholder{
+	color: #241715;
+    font-weight: normal;
+}
+textarea{
+	margin-bottom: 10px;
+	}
+
+
+input[type="text"]:focus,
+textarea:focus {
+  background: #FFFCF9;
+}
+
+.contact-form .submit {
+    background-color: #604C3F;
+	color: #FFFFFF;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    text-align: center;
+    width: auto;
+	transition: .2s;
+	border-radius: 4px;
+}
+
+.contact-form .submit:hover {
+	color: #FFFFFF;
+	background-color: #976;
+	border-radius: 12px;
+}
+
+/* PCで動作 */
+@media screen and (min-width: 960px){
+input[type=text],textarea{
+	padding : 5px;
+	width: 600px;
+}
+.contact{
+	min-height: 600px;
+	min-height: calc(100vh - 380px);
+}
+}
+/* モバイルで動作 */ 
+@media screen and (max-width: 959px){
+input[type=text],textarea{
+	padding : 1%;
+	width: 98%;
+}
+.contact{
+	min-height: 100vh;
+}
+}
+
+/*  footer  */
+footer {
+	z-index: 2;
+	background-color: #604C3F;
+	color: #f0f0f0;
+	overflow: hidden;
+}
+footer a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 1.2rem;
+	color: #E6D9CE;
+	text-decoration: none;
+	transition: .5s;
+}
+footer a:active{
+	color: #FED;
+	text-decoration: none;
+}
+@media screen and (min-width: 960px){
+footer .inner{
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+footer a:hover {
+	color: #FED;
+	text-decoration: none;
+}
+footer .inner .logo{
+	width: 300px;
+	height: 160px;
+	float: left;
+	position: relative;
+	}
+footer .inner .logo img{
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	}
+
+footer .inner nav {
+	padding-left: 300px;
+	padding-top: 20px;
+	height: 160px;
+}
+footer .inner nav > ul{
+	display :flex;
+	margin: 0 auto;
+	overflow: hidden;
+}
+footer .inner nav  ul > li{
+	flex: 1 1 auto;
+}
+
+footer li.f-menunav{
+	overflow: hidden;
+}
+
+ul li.f-localnav a{
+	display: inline-block;
+	font-size: 0.8rem;
+	padding-left: 0;
+	padding-top: 20px;
+	text-align: left;
+}
+ul li.localnav a:hover{
+	background: #765;
+	color: #EDC;
+}
+
+footer .inner img{
+	display: block;
+	width: 250px;
+	float: left;
+	margin-top: 20px;
+}
+footer p{
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+footer p small{
+	font-size: 0.9rem;
+	color: #E6D9CE;
+}
+}
+@media screen and (max-width: 959px){
+footer .inner{
+	box-sizing: border-box;
+	width: 100vw;
+	padding: 2vh 2vw;
+	text-align: center;^
+}
+footer nav > ul{
+	padding: 2vh 0;
+}
+footer ul > li,
+footer ul > li > ul >li{
+	padding-bottom: 1vh;
+}
+footer ul > li:last-child,
+footer ul > li > ul >li:last-child{
+	padding-bottom: 0;
+}
+footer ul > li > ul{
+	padding-top: 1vh;
+
+}
+ul li.f-localnav a{
+	font-size: 0.8rem;
+}
+}
